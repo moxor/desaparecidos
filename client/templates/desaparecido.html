@@ -1,0 +1,37 @@
+<template name="selected_desaparecido">
+    <div id="selected_desaparecido_content">
+        {{#if selected}}
+            <div id="titel">{{ciudad}}</div>
+            <hr/>
+            {{fecha}}
+            <br /><hr/>
+            <div id="left">
+                Muertos: {{muertos}}<br />
+                Desaparecidos:{{desaparecidos}}<br />
+            </div>
+
+            <div id="right">
+                <img src="{{picture}}" height="80px" width="80px">
+            </div>
+            <br/>
+            <div style="clear:both;">Mas informaciones:<br/></div>
+            <hr/>
+            {{informaciones}}
+            <hr/>
+            {{#if checkFuente}}
+
+                <a href="{{fuente}}" target="_blank">link</a>
+            {{/if}}
+            {{#if author}}
+
+                <br/><br/>
+                <button type="button" class="remove">remove</button>
+                <button type="button" class="modify">modify</button>
+            {{/if}}
+        {{else}}
+            <div><h1>Select desaparecido by clicking on the map</h1></div>
+        {{/if}}
+
+
+    </div>
+</template>

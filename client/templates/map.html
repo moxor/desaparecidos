@@ -1,0 +1,25 @@
+<template name="map">
+    <div id="container">
+        <div id="map" class="map"></div>
+        <div class="selected_desaparecido">
+            {{>selected_desaparecido}}
+        </div>
+        {{#if logedin}}
+          {{>notice}}
+        {{else}}
+        {{>notice_login}}
+      {{/if}}
+    </div>
+</template>
+
+<template name="notice">
+    <div class="notice">
+        Double-click on map creates a marker<br>
+        Click on a marker to delete it
+    </div>
+</template>
+<template name="notice_login">
+    <div class="notice">
+        Create Account to sign desaparecidos<br>
+    </div>
+</template>

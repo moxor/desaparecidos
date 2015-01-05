@@ -1,0 +1,23 @@
+<template name="nav">
+    <div class="nav">
+        {{> loginButtons}}
+        {{>menu}}
+
+    </div>
+</template>
+
+
+<template name="menu">
+    <div class="menu">
+        <div id="name">
+            <a href="{{pathFor 'home'}}">Desaparecidos</a>
+        </div>
+
+        <a href="{{pathFor 'test'}}">informaciones</a></div>
+    {{#if isInRole 'admin'}}
+        {{> admin_nav}}
+    {{/if}}
+</template>
+<template name="admin_nav">
+    <a href="{{pathFor 'admin_dash'}}">admin</a>
+</template>

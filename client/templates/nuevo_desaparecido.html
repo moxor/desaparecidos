@@ -1,0 +1,31 @@
+<template name="new_desaparecido">
+    <b>Latitude: </b> {{lat}}
+    <br />
+    <b>Longitude </b>{{long}}
+    <br />
+    <br />
+    <div class="form">
+      {{#autoForm collection="Desaparecidos" id="insertDesaparecidosForm" type="insert"}}
+          <fieldset>
+              <div class="form_left">
+                {{> afQuickField name='location'}}
+              {{> afQuickField name='lat'}}
+                {{> afQuickField name='long'}}
+                {{> afQuickField name='date' class="datepick" data-date-format="MM DD YYYY"}}
+                  <!--{{> afQuickField name='author'}}-->
+                {{> afQuickField name='deaths'}}
+                {{> afQuickField name='desaparecidos'}}
+              </div>
+              <div class="form_right">
+                {{> afQuickField name='summary' rows=10}}
+
+              </div>
+              <div class="bottom">
+                {{> afQuickField name='source' rows=1}}
+                {{> afQuickField name="picture"}}
+              </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Insert</button>
+      {{/autoForm}}
+    </div>
+</template>
