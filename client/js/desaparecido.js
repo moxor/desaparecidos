@@ -66,6 +66,9 @@ Template.selected_desaparecido.helpers({
                 return true;
         }
         return false;
+    },
+    get_link:function(){
+        return "desaparecido/"+Session.get("activado_desaparecidos");
     }
 
 

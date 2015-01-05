@@ -1,4 +1,9 @@
 <template name="home">
+<head>
+    <title>Desaparecidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
     {{#autoForm collection="Desaparecidos" id="insertDesaparecidosForm" type="insert"}} {{/autoForm}}
     {{#if showCreateDialog}}
         {{> createDialog}}
@@ -8,10 +13,8 @@
     {{/if}}
     <div class="wrapper">
         {{> nav}}
-        {{>header}}
-        <div class="content">
-            {{>map}}
-        </div>
+        {{> yield "content"}}
+
 
     </div>
 

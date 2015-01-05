@@ -16,17 +16,29 @@ Router.configure({
     return Meteor.subscribe("images");
   }
 });
-Router.map(function(){
-  this.route('home', {path: '/',
 
-    data: function() {
-      return {
-        images: Images.find({})
-      };
-    }
-  } );
-
-});
 Router.route('/test',function () {
-  this.layout('test');
+  this.layout('home');
+  this.render('test',{to: 'content'});
 });
+Router.route('/desaparecido/:_id', function () {
+  this.layout('home', {
+    data: function () {
+      console.log(this.params);
+      return Desaparecidos.findOne({_id: this.params._id});
+    }
+  });
+  this.render('desaparecido_page', {to: 'content'});
+});
+
+  Router.route("/",function() {
+    this.layout(  'home', {
+      data: function() {
+        return {
+          images: Images.find({})
+        };
+      }
+    } );
+    this.render('startpage', {to: 'content'});
+});
+desaparecido_page
