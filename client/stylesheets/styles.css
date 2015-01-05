@@ -8,7 +8,7 @@ body {
 }
 .wrapper{
   position: absolute;
-  top: 0px;
+  top: 0;
   width: 100%;
   z-index: -3;
   background-color: lavender;
@@ -359,6 +359,18 @@ display: flex;
   #container {
     display: table;
   }
+  #slider {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+@media all and (min-width: 240px) {
+  /* styles for smaller devices */
+
+  #slider {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
 }
 @media all and (min-width: 651px) {
   /* styles for smaller devices */
@@ -377,10 +389,19 @@ display: flex;
   #selected_desaparecido_content, #left, #right{
     font-size: 0.7em;
   }
+  #slider {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 @media all and (min-width: 910px) {
   #selected_desaparecido_content, #left, #right{
     font-size: 0.9em;
+  }
+
+  #slider {
+    margin-left: 120px;
+    margin-right: 120px;
   }
 }
 @media all and (min-width: 750px) {

@@ -1,7 +1,7 @@
 var debugg=false;
-Meteor.publish("markers", function () {
-  return Markers.find();
-});
+//Meteor.publish("markers", function () {
+//  return Markers.find();
+//});
 Meteor.publish(null, function (){
   return Meteor.roles.findOne(this.userId);
 });

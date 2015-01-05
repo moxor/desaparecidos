@@ -25,3 +25,4 @@ cfs:gridfs
 cfs:filesystem
 tsega:bootstrap3-datetimepicker
 momentjs:moment
+houston:admin
