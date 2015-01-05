@@ -68,7 +68,7 @@ Template.slider.rendered = function () {
 
 
     }
-    }, 1000);
+    }, 600);
 };
 var addInvisible=function(str){
     $(str).addClass("invisible");
