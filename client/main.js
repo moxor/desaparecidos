@@ -25,16 +25,8 @@ Router.map(function(){
       };
     }
   } );
-  this.route('test', {path: '/test'});
-  this.route('admin', {
-    path: '/admin_dash',
 
-    onBeforeAction: function() {
-      user = Meteor.user();
-      if(!Roles.userIsInRole(user, ['admin'])) {
-        this.redirect('home');
-        this.stop();
-      }
-      return true;
-    }});
+});
+Router.route('/test',function () {
+  this.layout('test');
 });
