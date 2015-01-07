@@ -26,3 +26,6 @@ cfs:filesystem
 tsega:bootstrap3-datetimepicker
 momentjs:moment
 houston:admin
+random
+cmather:handlebars-server
+email

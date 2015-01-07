@@ -5,6 +5,7 @@ Desaparecidos is a Meteor -Mapping-Application to track the cases of missing peo
 ## How to install
 simply
 ```
+curl https://install.meteor.com/ | sh
 git clone https://github.com/moxor/desaparecidos.git
 cd desaparecidos
 meteor
@@ -19,11 +20,11 @@ MIT
 to [bevanhunt](https://github.com/bevanhunt/meteor-leaflet/) for the leaflet examples
 ## Todo
 * Check security and Collection subscription
-** publish only the author if its the active user
+* publish only the author if its the active user
 * Slider -> minor fixes
 * router for extra pages
 * append informations
-** enable to modify own cases
-** suggest new informations about exisiting desaparecido -> to admin and author
+* enable to modify own cases
+* suggest new informations about exisiting desaparecido -> to admin and author
 * export database without author
 * Translation

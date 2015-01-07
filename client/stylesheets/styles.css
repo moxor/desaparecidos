@@ -13,10 +13,21 @@ body {
   z-index: -3;
   background-color: lavender;
 }
+.footer,.footer > a{
+  background-color: black;
+  color: white;
+  font-size: 0.9em;
+  margin: auto;
+  link:white;
+
+}
 #container {
   width: 100%;
-  margin: 15px auto 0 auto;
+  margin: auto;
+  margin-top: 10px;
   overflow: hidden;
+  position: relative;
+
 }
 
 .datepicker {
@@ -24,7 +35,7 @@ body {
 }
 .map {
   border: solid 1px #b9bbbe;
-  width: 70%;
+  width: 100%;
   margin-left: 1%;
   height: 400px;
   border-radius: 5px;
@@ -35,6 +46,10 @@ body {
   z-index: 8;
   display: inline;
   float: left;
+}
+.map_container{
+  position: relative;
+  overflow: hidden;
 }
 .leaflet-div-icon {
   background: #49AFCD;
@@ -62,14 +77,16 @@ body {
   width: 20%;
   margin-left: 10px;
   min-height: 400px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
-  z-index: 8;
-  display: inline;
-  background-color: cornsilk;
+  height: 550px;
+  right: 0;
+  margin: 0;
   overflow: auto;
+  position: absolute;
+  top: 0;
+  width: 315px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 #selected_desaparecido_content {
   margin-left: 10px;
@@ -224,7 +241,7 @@ datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
 }
 .mask {
   position: fixed;
-  width: 100%;
+  width: 100% ;
   height: 100%;
   top: 0px;
   left: 0px;
@@ -232,6 +249,7 @@ datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
   opacity: .4;
   z-index: -1;
 }
+
 .modal {
   width:630px;
   margin: 20px auto;
@@ -333,6 +351,8 @@ display: flex;
   }
   .selected_desaparecido{
     display: table-footer-group;
+    position: relative;
+    width: 100%;
   }
   #container {
     display: table;
@@ -404,9 +424,26 @@ display: flex;
     margin-right: 120px;
   }
 }
+@media all and (max-width: 651px) {
+  #selected_desaparecido{
+    width: 100%
+    display:table;
+  }
+
+}
+@media all and (max-width: 910px) {
+  #selected_desaparecido{
+    width: 15%
+  }
+
+}
 @media all and (min-width: 750px) {
   #selected_desaparecido_content, #left, #right{
     font-size: 0.8em;
+  }
+  .content{
+    margin-left: 1em;
+    margin-right: 1em;
   }
 }
 @media all and (min-width: 800px) {

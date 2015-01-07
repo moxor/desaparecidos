@@ -1,10 +1,23 @@
-<template name="desaparecido_page">
-    <div class="wrapper">
-        {{> nav}}
-        <div class="content">
-            {{location}}<br/>
-            {{date}}
+<template name="desaparecidoPage">
+    <div class="content" id="desaparecidos_page">
+
+        <div id="titel">{{location}}</div>
+        <hr/>
+        {{date}}
+        <br /><hr/>
+        <div id="left">
+            Muertos: {{muertos}}<br />
+            Desaparecidos:{{desaparecidos}}<br />
         </div>
 
+        <div id="right">
+            <img src="{{picturelink}}" height="80px" width="80px">
+        </div>
+        <br/>
+        <div style="clear:both;">Mas informaciones:<br/></div>
+        <hr/>
+        {{summary}}
+        <hr/>
     </div>
+
 </template>

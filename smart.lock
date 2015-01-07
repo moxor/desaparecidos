@@ -1,7 +1,15 @@
 {
   "meteor": {},
   "dependencies": {
-    "basePackages": {},
-    "packages": {}
+    "basePackages": {
+      "leaflet-markercluster": {}
+    },
+    "packages": {
+      "leaflet-markercluster": {
+        "git": "https://github.com/bevanhunt/meteor-leaflet-markercluster.git",
+        "tag": "v0.0.2",
+        "commit": "5c1c27943b7dbd59886cf4c9a16ad83d86d3b532"
+      }
+    }
   }
 }

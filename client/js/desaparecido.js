@@ -92,3 +92,12 @@ Images.allow({
         return true;
     }
 });
+Template.selected_desaparecido.helpers({
+    picturelink:function(){
+        if(Desaparecidos.findOne(Session.get("activado_desaparecidos"))) {
+            if (Desaparecidos.findOne(Session.get("activado_desaparecidos")).picture)
+                return Images.findOne(Desaparecidos.findOne(Session.get("activado_desaparecidos")).picture).url();
+        }
+        return "/images/nomas.jpg";
+    }
+});

@@ -1,8 +1,10 @@
 <template name="map">
     <div id="container">
-        <div id="map" class="map"></div>
-        <div class="selected_desaparecido">
-            {{>selected_desaparecido}}
+        <div class="map_container">
+            <div id="map" class="map"></div>
+            <div class="selected_desaparecido">
+                {{>selected_desaparecido}}
+            </div>
         </div>
         {{#if logedin}}
           {{>notice}}
@@ -20,6 +22,6 @@
 </template>
 <template name="notice_login">
     <div class="notice">
-        Create Account to sign desaparecidos<br>
+        Create Account to add new desaparecidos<br>
     </div>
 </template>
