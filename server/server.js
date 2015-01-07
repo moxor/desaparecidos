@@ -6,7 +6,7 @@ Meteor.publish(null, function (){
   return Meteor.roles.findOne(this.userId);
 });
 Meteor.publish("desaparecidos", function () {
-  return Desaparecidos.find({fields: { 'author ': false }} );
+  return Desaparecidos.find();
 });
 Meteor.publish('images', function() {
   return Images.find();
