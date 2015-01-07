@@ -71,10 +71,11 @@ Template.map.rendered = function() {
                 icon: createIcon(numbers?numbers:"0",document._id)
             }).addTo(map)
                 .on('click', function(event) {
-                    var constClass="."+event.target.options._id;
+                    var constClass="."+document._id;
                     //console.log(event.target.options._id);
                     $('.selecteded').toggleClass("selecteded");
                     $(constClass).addClass("selecteded");
+                    
                     Session.set("activado_desaparecidos",document._id);
                 });
             $('.'+document._id).addClass("visible");

@@ -2,7 +2,7 @@ $(function() {
   $(window).resize(function() {
     var calculateHeight=window.innerHeight - 82 - 45;
     if (calculateHeight<=40)calculateHeight=300;
-    if (window.innerWidth <=650)$('#map').css('width', "90%");
+    if (window.innerWidth <=650)$('#map').css('width', "100%");
     //else $('#map').css('width', "75%");
     console.log(window.innerWidth );
     $('#map').css('height', calculateHeight +" !important");

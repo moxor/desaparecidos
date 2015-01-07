@@ -7,11 +7,13 @@ body {
   font-family: "Consolas", "Menlo", "Courier", monospace;
 }
 .wrapper{
-  position: absolute;
   top: 0;
   width: 100%;
   z-index: -3;
   background-color: lavender;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .footer,.footer > a{
   background-color: black;
@@ -380,8 +382,8 @@ display: flex;
     display: table;
   }
   #slider {
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 @media all and (min-width: 240px) {
@@ -397,7 +399,7 @@ display: flex;
 
   .header-element{
     display: flex;
-    float: left
+    float: left;
   }
   .selected_desaparecido{
     float: left;
@@ -425,8 +427,8 @@ display: flex;
   }
 }
 @media all and (max-width: 651px) {
-  #selected_desaparecido{
-    width: 100%
+  .selected_desaparecido{
+    width: 100%;
     display:table;
   }
 
