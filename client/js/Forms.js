@@ -20,7 +20,6 @@ Template.new_desaparecido.rendered=function(){
 
 Template.createDialog.events({
     'click .save': function (event, template) {
-        Markers.insert(Session.get("createCoords"));
         Session.set("showCreateDialog", false);
         $('.bootstrap-datetimepicker-widget').remove();
     },
@@ -30,6 +29,7 @@ Template.createDialog.events({
         $('.bootstrap-datetimepicker-widget').remove();
     }
 });
+/////////////////////////////////////////////////
 Template.errorCountry.events({
 
     'click .cancel': function () {
@@ -47,18 +47,44 @@ Template.errorCountry.helpers({
 
     }
 });
+////////////////////////////////////////////////
+Template.errorMessage.events({
+
+    'click .cancel': function () {
+        Session.set("showError", false);
+    }
+});
+Template.errorMessage.helpers({
+
+    errorMessage: function () {
+
+        return Session.get("showError").Message;
+
+    }
+});
+/////////////////////////////////////////////////
 AutoForm.hooks({
     insertDesaparecidosForm: {
         onSuccess: function (operation, result, template) {
-            Markers.insert(Session.get("createCoords"));
+            sendEmail(result);
+            Session.set("activado_desaparecidos",result);
+            //console.log(event.target.options._id);
+            var constClass="."+result;
+            $('.selecteded').toggleClass("selecteded");
+            $(constClass).addClass("selecteded");
             Session.set("showCreateDialog", false);
-            console.log("onSuccess on all input/update/method forms!");
         }
 
 
 
     }
 });
+var sendEmail= function(result){
+    Meteor.call('sendEmail',
+        'Hello from Desaparecidos!',
+        'Hey there!\nYou have entered a new desaparecido:\n'+Desaparecidos.findOne(result).stringify()
+    );
+};
 AutoForm.hooks({
     insertDesaparecidosForm: {
 

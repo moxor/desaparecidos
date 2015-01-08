@@ -17,3 +17,13 @@ Router.configure({
   }
 });
 
+
+
+
+Accounts.validateLoginAttempt(function(type){
+
+  if(type.user && type.user.emails && !type.user.emails[0].verified )
+    throw new Meteor.Error(100002, "email not verified" );
+  return true;
+});
+

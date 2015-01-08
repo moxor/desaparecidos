@@ -249,12 +249,12 @@ datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
   left: 0px;
   background-color: #000000;
   opacity: .4;
-  z-index: -1;
+  z-index: 11;
 }
 
 .modal {
   width:630px;
-  margin: 20px auto;
+  margin:20px 30% auto;
   padding:15px;
   text-align:left;
   margin-bottom: 20px;
@@ -263,6 +263,12 @@ datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  position: absolute;
+  z-index:12;
+}
+
+.lat_long {
+  display: none;
 }
 .slider{
   margin-left: 10px;

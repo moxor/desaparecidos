@@ -11,6 +11,9 @@
     {{#if showErrorCountry}}
         {{> errorCountry}}
     {{/if}}
+    {{#if showError}}
+        {{> errorMessage}}
+    {{/if}}
     <div class="wrapper">
         {{> nav}}
         {{> yield "content"}}

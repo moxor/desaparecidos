@@ -13,9 +13,13 @@ Template.home.helpers({
     },
     showErrorCountry:function () {
     return Session.get("showErrorCountry");
-  }
+  },
+    showError:function () {
+        return Session.get("showError");
+    }
 
-});
+
+    });
 
 
 

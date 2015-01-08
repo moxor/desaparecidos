@@ -26,7 +26,9 @@ Template.map.rendered = function() {
     L.tileLayer.provider('Thunderforest.Outdoors').addTo(map);
 
     map.on('dblclick', function(event) {
-        if (Meteor.userId()){
+        if(Meteor.user && Meteor.user().emails && !Meteor.user().emails[0].verified )
+            Session.set("showError",{Message:"Email not verified, please write Mail to aaron @ kimmigs.de"});
+        else if (Meteor.userId()&&Meteor.user().emails[0].verified ){
             Session.set("createCoords", {latlng: event.latlng ,userid:Meteor.userId()});
             Meteor.call("get_country", event.latlng, function(error, country) {
                 Session.set("country",country);
@@ -75,7 +77,7 @@ Template.map.rendered = function() {
                     //console.log(event.target.options._id);
                     $('.selecteded').toggleClass("selecteded");
                     $(constClass).addClass("selecteded");
-                    
+
                     Session.set("activado_desaparecidos",document._id);
                 });
             $('.'+document._id).addClass("visible");
