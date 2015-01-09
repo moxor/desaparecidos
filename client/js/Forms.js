@@ -67,8 +67,9 @@ AutoForm.hooks({
     insertDesaparecidosForm: {
         onSuccess: function (operation, result, template) {
             sendEmail(result);
+
             Session.set("activado_desaparecidos",result);
-            //console.log(event.target.options._id);
+            console.log(result);
             var constClass="."+result;
             $('.selecteded').toggleClass("selecteded");
             $(constClass).addClass("selecteded");
@@ -82,7 +83,7 @@ AutoForm.hooks({
 var sendEmail= function(result){
     Meteor.call('sendEmail',
         'Hello from Desaparecidos!',
-        'Hey there!\nYou have entered a new desaparecido:\n'+Desaparecidos.findOne(result).stringify()
+        'Hey there!\nYou have entered a new desaparecido:\n'+JSON.stringify(Desaparecidos.findOne(result))
     );
 };
 AutoForm.hooks({
