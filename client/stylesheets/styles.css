@@ -7,13 +7,18 @@ body {
   font-family: "Consolas", "Menlo", "Courier", monospace;
 }
 .wrapper{
-  top: 0;
-  width: 100%;
+  margin-top: 30px;
+  width: 90%;
   z-index: -3;
   background-color: lavender;
-  width: 100%;
-  height: 100%;
+  height: 95%;
   overflow: hidden;
+  margin:auto;
+  border-width:medium; 
+  border-color:grey;
+  border-style:dotted; 
+  padding:5px;
+  
 }
 .footer,.footer > a{
   background-color: black;
@@ -224,7 +229,7 @@ margin-left: 20px;
   float: right;
  }
 .notice {
-  margin: 10px 0 5px 0;
+  margin: auto;
   line-height: 1.5;
   text-align: center;
   width: 350px;
@@ -360,7 +365,7 @@ display: flex;
   .selected_desaparecido{
     display: table-footer-group;
     position: relative;
-    width: 100%;
+    /*width: 100%;*/
   }
   #container {
     display: table;
