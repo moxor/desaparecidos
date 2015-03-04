@@ -13,13 +13,13 @@
     "console": {
         "@expanded": true,
         "@height": "153",
-        "@maximized": "false",
+        "@maximized": false,
         "json()": {
             "meta": {
                 "accessList": [
                     "tab13",
-                    "tab1",
-                    "tab0"
+                    "tab0",
+                    "tab1"
                 ]
             },
             "name": "pane1",
@@ -32,18 +32,20 @@
                         "tab0"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1425494418833
-                        },
                         "filter": true,
                         "title": "Terminal",
                         "terminal": {
                             "id": "devel_116",
                             "cwd": "",
-                            "width": 1048,
-                            "height": 127
-                        }
+                            "width": 943,
+                            "height": 127,
+                            "scrollTop": 2281.4009399414062
+                        },
+                        "hash": "67452301efcdab8998badcfe10325476c3d2e1f0",
+                        "meta": {
+                            "timestamp": 1425494418833
+                        },
+                        "changed": false
                     },
                     "editorType": "terminal",
                     "active": false
@@ -56,18 +58,39 @@
                         "tab1"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1425494418835
-                        },
                         "filter": true,
                         "title": "Immediate (Javascript (browser))",
                         "tooltip": "Immediate (Javascript (browser))",
                         "immediate": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 2,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 2,
+                                    "column": 0
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0,
                             "type": "jsbrowser",
                             "history": [],
                             "pos": 0
-                        }
+                        },
+                        "hash": "bc37e9908b413249fe666f189265c03143e4d841",
+                        "meta": {
+                            "timestamp": 1425494418835
+                        },
+                        "changed": false
                     },
                     "editorType": "immediate",
                     "active": false
@@ -90,7 +113,7 @@
                         "terminal": {
                             "id": "devel_805",
                             "cwd": "",
-                            "width": 1048,
+                            "width": 943,
                             "height": 127
                         }
                     },
@@ -105,18 +128,18 @@
     },
     "ext": {
         "counters": {
-            "@ace": 2,
+            "@ace": 1,
             "@acestatus": 1,
             "@divider": 4,
-            "@document": 14,
+            "@document": 15,
             "@form": 4,
             "@immediate": 1,
             "@menu": 5,
             "@menuitem": 13,
             "@pane": 2,
-            "@session": 14,
-            "@tab": 14,
-            "@undoManager": 14
+            "@session": 13,
+            "@tab": 15,
+            "@undoManager": 15
         }
     },
     "findinfiles": {
@@ -133,12 +156,13 @@
     },
     "panecycle": {
         "json()": [
-            "tab13",
-            "tab12"
+            "tab14",
+            "tab13"
         ]
     },
     "panels": {
         "@active-left": "tree",
+        "@width-left": 305,
         "commands.panel": {
             "@enabled": "true",
             "@name": "commands.panel"
@@ -169,7 +193,8 @@
                 "/client",
                 "/client/templates",
                 "/client/js",
-                "/client/stylesheets"
+                "/client/stylesheets",
+                "/server"
             ]
         }
     },
@@ -187,16 +212,17 @@
             "meta": {
                 "accessList": [
                     "tab12",
-                    "tab8",
+                    "tab14",
+                    "tab2",
                     "tab3",
-                    "tab6",
-                    "tab11",
-                    "tab10",
-                    "tab9",
-                    "tab5",
                     "tab4",
+                    "tab5",
+                    "tab6",
                     "tab7",
-                    "tab2"
+                    "tab8",
+                    "tab9",
+                    "tab10",
+                    "tab11"
                 ]
             },
             "name": "pane0",
@@ -209,14 +235,36 @@
                         "tab2"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424983762000
-                        },
                         "filter": true,
                         "title": "desaparecido_page.html",
                         "tooltip": "/client/templates/desaparecido_page.html",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0
+                        },
+                        "hash": "9ab17a3148680ae1716047285f5792f2a0b0b8c8",
+                        "meta": {
+                            "timestamp": 1424983762000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -229,14 +277,39 @@
                         "tab3"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1425497169926
-                        },
                         "filter": true,
                         "title": "desaparecido.html",
                         "tooltip": "/client/templates/desaparecido.html",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 2,
+                                    "column": 0
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 73,
+                                "mode": "ace/mode/html"
+                            }
+                        },
+                        "hash": "b561baf52fc7a672c0b42bb8dc08c67d79e1cb07",
+                        "meta": {
+                            "timestamp": 1425497186000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -249,14 +322,40 @@
                         "tab4"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424986902000
-                        },
                         "filter": true,
                         "title": "map.html",
                         "tooltip": "/client/templates/map.html",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 14,
+                                "state": "start",
+                                "mode": "ace/mode/html"
+                            }
+                        },
+                        "hash": "ec83e6ef75a1997a13b6769bf875afa0cc5fa7df",
+                        "meta": {
+                            "timestamp": 1424986902000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -269,14 +368,40 @@
                         "tab5"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424983762000
-                        },
                         "filter": true,
                         "title": "map.js",
                         "tooltip": "/client/js/map.js",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 701,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 42,
+                                "state": "start",
+                                "mode": "ace/mode/javascript"
+                            }
+                        },
+                        "hash": "06faedaeccfb66074b1c4abcf9982cd3b81f5d27",
+                        "meta": {
+                            "timestamp": 1424983762000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -289,14 +414,36 @@
                         "tab6"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424983762000
-                        },
                         "filter": true,
                         "title": "desaparecido.js",
                         "tooltip": "/client/js/desaparecido.js",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0
+                        },
+                        "hash": "ae2da3bac8d2787ef232a1f3c5d43b8a7e2ab4fb",
+                        "meta": {
+                            "timestamp": 1424983762000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -309,14 +456,36 @@
                         "tab7"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424983762000
-                        },
                         "filter": true,
                         "title": "classic.css",
                         "tooltip": "/client/stylesheets/classic.css",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0
+                        },
+                        "hash": "ad41ac173bcdc9fc1ce41e3cef1a99f47925276a",
+                        "meta": {
+                            "timestamp": 1424983762000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -329,14 +498,36 @@
                         "tab8"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1425498278154
-                        },
                         "filter": true,
                         "title": "styles.css",
                         "tooltip": "/client/stylesheets/styles.css",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 5934,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 396,
+                                    "column": 17
+                                },
+                                "end": {
+                                    "row": 396,
+                                    "column": 17
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0
+                        },
+                        "hash": "45feab8234c1806b9b7c4ceb50171b5b26685a34",
+                        "meta": {
+                            "timestamp": 1425498295000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -349,14 +540,36 @@
                         "tab9"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424983762000
-                        },
                         "filter": true,
                         "title": "main.js",
                         "tooltip": "/client/main.js",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0
+                        },
+                        "hash": "8952d0663113f65476831088c691f856e82b2dd7",
+                        "meta": {
+                            "timestamp": 1424983762000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -369,14 +582,36 @@
                         "tab10"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424983762000
-                        },
                         "filter": true,
                         "title": "client.js",
                         "tooltip": "/client/client.js",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": 0
+                        },
+                        "hash": "a60a42f1bb767a3753e6be5904990445803e35ae",
+                        "meta": {
+                            "timestamp": 1424983762000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -389,14 +624,39 @@
                         "tab11"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1424983762000
-                        },
                         "filter": true,
                         "title": "main.html",
                         "tooltip": "/client/main.html",
-                        "ace": {}
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 51,
+                                "mode": "ace/mode/html"
+                            }
+                        },
+                        "hash": "f080446304324098b74b9addc0a16960d33e1b84",
+                        "meta": {
+                            "timestamp": 1424983762000
+                        },
+                        "changed": false
                     },
                     "editorType": "ace",
                     "active": false
@@ -419,6 +679,28 @@
                         "filter": true,
                         "title": "project.settings",
                         "tooltip": "/.c9/project.settings",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab14",
+                    "path": "~/.c9/keybindings.settings",
+                    "className": [
+                        "tab14"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "keybindings": true,
+                            "nofs": true,
+                            "timestamp": 1425499257901
+                        },
+                        "filter": true,
+                        "title": "keybindings.settings",
+                        "tooltip": "~/.c9/keybindings.settings",
                         "ace": {}
                     },
                     "editorType": "ace",
