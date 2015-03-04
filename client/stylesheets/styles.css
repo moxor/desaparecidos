@@ -44,7 +44,7 @@ body {
   border: solid 1px #b9bbbe;
   width: 100%;
   margin-left: 1%;
-  height: 400px;
+  height: 500px;
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 10px;
@@ -57,6 +57,7 @@ body {
 .map_container{
   position: relative;
   overflow: hidden;
+
 }
 .leaflet-div-icon {
   background: #49AFCD;
@@ -83,9 +84,9 @@ body {
   border: solid 1px #b9bbbe;
   width: 20%;
   margin-left: 10px;
-  min-height: 400px;
+  min-height: 300px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
-  height: 550px;
+
   right: 0;
   margin: 0;
   overflow: auto;
@@ -98,6 +99,8 @@ body {
 #selected_desaparecido_content {
   margin-left: 10px;
   display: block;
+  height: 516px;
+  overflow: scroll;
 }
 hr{
   border: none;
@@ -348,6 +351,7 @@ display: flex;
   .map
   {height: 300px;
   }
+
 }
 
 @media all and (max-width: 650px) {
@@ -374,7 +378,7 @@ display: flex;
 
 }
 
-@media all and (max-width: 240px) {
+@media all and (max-width: 390px) {
   /* styles for smaller devices */
   .notice{
     font-size: 11px;
@@ -389,6 +393,11 @@ display: flex;
     display: table-footer-group;
 
   }
+  #selected_desaparecido_content{
+    min-width: 0;
+
+  }
+
   #container {
     display: table;
   }
