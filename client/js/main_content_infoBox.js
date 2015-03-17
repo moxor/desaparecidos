@@ -1,7 +1,7 @@
 /**
  * Created by nanu on 20.12.14.
  */
-Template.selected_desaparecido.helpers({
+Template.caseData.helpers({
    ciudad:function(){
        if(Desaparecidos.findOne(Session.get("activado_desaparecidos"))){
        if (!Session.get("activado_desaparecidos")||!Desaparecidos.findOne(Session.get("activado_desaparecidos")).location)return "";
@@ -73,7 +73,7 @@ Template.selected_desaparecido.helpers({
 
 
 });
-Template.selected_desaparecido.events({
+Template.caseData.events({
    'click .remove': function () {
        Desaparecidos.remove({_id:Session.get("activado_desaparecidos")});
        Session.set("activado_desaparecidos", null);
@@ -92,7 +92,7 @@ Images.allow({
         return true;
     }
 });
-Template.selected_desaparecido.helpers({
+Template.caseData.helpers({
     picturelink:function(){
         if(Desaparecidos.findOne(Session.get("activado_desaparecidos"))) {
             if (Desaparecidos.findOne(Session.get("activado_desaparecidos")).picture)

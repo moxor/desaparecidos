@@ -25,7 +25,7 @@ Meteor.startup(function() {
     Accounts.emailTemplates.from = 'Desaparecidos <aaron@kimmigs.de>';
 
     // The public name of your application. Defaults to the DNS name of the application (eg: awesome.meteor.com).
-    Accounts.emailTemplates.siteName = 'desaparecidos.meteor.com';
+    Accounts.emailTemplates.siteName = 'desaparecidosmx.org';
 
     // A Function that takes a user object and returns a String for the subject line of the email.
     Accounts.emailTemplates.verifyEmail.subject = function(user) {

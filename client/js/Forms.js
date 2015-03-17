@@ -1,5 +1,7 @@
 /**
  * Created by nanu on 20.12.14.
+ *
+ * This file is for the new Data-Form
  */
 Template.new_desaparecido.helpers({
     lat:function(){

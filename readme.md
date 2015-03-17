@@ -11,6 +11,7 @@ cd desaparecidos
 meteor
 ```
 First user accessing /admin gets admin rights
+And have a look at /server/config_example.js and rename it to config.js
 ## Demo
 
 http://desaparecidos.meteor.com/

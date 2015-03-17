@@ -1,5 +1,10 @@
-<template name="selected_desaparecido">
-    <div id="selected_desaparecido_content" styles="height: 380px !important;">
+<template name="infoBox">
+
+                {{>caseData}}
+
+</template>
+<template name="caseData">
+
         {{#if selected}}
             <div id="titel">{{ciudad}}</div>
             <hr/>
@@ -20,9 +25,10 @@
             <hr/>
             {{#if checkFuente}}
 
-                <a href="{{fuente}}" target="_blank">link</a>
+                <a href="{{fuente}}" target="_blank">enlace de prensa</a>
+                <br/>
             {{/if}}
-            <a href="{{get_link}}" target="_blank">mas informaciones</a>
+            <a href="{{get_link}}" >mas informaciones</a>
             {{#if author}}
 
                 <br/><br/>
@@ -30,9 +36,9 @@
                 <button type="button" class="modify">modify</button>
             {{/if}}
         {{else}}
-            <div><h1>Select desaparecido by clicking on the map</h1></div>
+            <div><h2>Selectar desaparecido en el mapa.</h2></div>
+            
         {{/if}}
 
 
-    </div>
 </template>

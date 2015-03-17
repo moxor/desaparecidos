@@ -2,11 +2,14 @@
  * Created by nanu on 07.01.15.
  */
 Router.route('/test',function () {
-    this.layout('home');
+    this.layout('page_template');
     this.render('test',{to: 'content'});
 });
+Router.route('/new_template',function () {
+    this.layout('new_main');
+});
 Router.route('/desaparecido/:_id', function () {
-    this.layout('home', {
+    this.layout('page_template', {
         data: function () {
             console.log(this.params);
             return Desaparecidos.findOne({_id: this.params._id});
@@ -16,12 +19,12 @@ Router.route('/desaparecido/:_id', function () {
 });
 
 Router.route("/",function() {
-    this.layout(  'home', {
+    this.layout(  'page_template', {
         data: function() {
             return {
                 images: Images.find({})
             };
         }
     } );
-    this.render('startpage', {to: 'content'});
+    this.render('main_template', {to: 'content'});
 });

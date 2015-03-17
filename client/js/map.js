@@ -27,7 +27,7 @@ Template.map.rendered = function() {
 
     map.on('dblclick', function(event) {
         if(Meteor.user && Meteor.user().emails && !Meteor.user().emails[0].verified )
-            Session.set("showError",{Message:"Email not verified, please write Mail to aaron @ kimmigs.de"});
+            Session.set("showError",{Message:"Email not verified, please write Mail to info @ desaparecidosmx.org"});
         else if (Meteor.userId()&&Meteor.user().emails[0].verified ){
             Session.set("createCoords", {latlng: event.latlng ,userid:Meteor.userId()});
             Meteor.call("get_country", event.latlng, function(error, country) {

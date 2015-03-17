@@ -1,7 +1,7 @@
 /**
  * Created by nanu on 20.12.14.
  */
-Template.header.helpers({
+Template.numbers.helpers({
     getDesaparecidos:function () {
         return Session.get("desaparecidos");
     },

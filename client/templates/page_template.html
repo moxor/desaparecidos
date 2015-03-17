@@ -1,0 +1,35 @@
+<template name="page_template">
+<head>
+    <title>DesaparecidosMX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+    {{#autoForm collection="Desaparecidos" id="insertDesaparecidosForm" type="insert"}} {{/autoForm}}
+    {{#if showCreateDialog}}
+        {{> createDialog}}
+    {{/if}}
+    {{#if showErrorCountry}}
+        {{> errorCountry}}
+    {{/if}}
+    {{#if showError}}
+        {{> errorMessage}}
+    {{/if}}
+
+        
+    <div class="wrapper">
+        <div class="header">
+            {{>header}}
+        </div><!--/ header-->
+        <div class="menu">
+            {{> menu}}
+        </div>
+        <div class="content">
+            
+            {{> yield "content"}}
+        </div><!--/content -->
+        <div class="footer">
+            {{>footer}}
+        </div><!--/footer -->
+    </div> <!--/wrapper-->
+
+</template>

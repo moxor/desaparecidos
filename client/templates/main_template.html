@@ -1,24 +1,19 @@
-<template name="home">
-<head>
-    <title>Desaparecidos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</head>
+<template name="main_template">
 
-    {{#autoForm collection="Desaparecidos" id="insertDesaparecidosForm" type="insert"}} {{/autoForm}}
-    {{#if showCreateDialog}}
-        {{> createDialog}}
-    {{/if}}
-    {{#if showErrorCountry}}
-        {{> errorCountry}}
-    {{/if}}
-    {{#if showError}}
-        {{> errorMessage}}
-    {{/if}}
-    <div class="wrapper">
-        {{> nav}}
-        {{> yield "content"}}
-
-        {{>footer}}
-    </div>
-
+    <div class="top">
+                <div class="numbers">{{>numbers}}</div>
+                <div class="filters"> {{>filters}}
+                    <div class="drop">{{>slider}}</div>
+                </div>
+            </div><!--/ top-->
+            <div class="center">
+                <div class="center_left">
+                    <div class="map_container">{{>map}}</div>
+                </div><!--/center_left -->
+                <div class="center_right">
+                    <div class="info_box">
+                        {{>infoBox}}
+                    </div>
+                </div><!--/center_right-->
+            </div><!--/center -->
 </template>

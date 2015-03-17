@@ -6,22 +6,19 @@ $(function() {
     //else $('#map').css('width', "75%");
     console.log(window.innerWidth );
     $('#map').css('height', calculateHeight +" !important");
-    $('.selected_desaparecido').css('height', window.innerHeight - 82 - 45);
   });
   $(window).resize(); // trigger resize event
 });
+
+//configure router
 Router.configure({
-  layoutTemplate: "home",
+  layoutTemplate: "page_template",
   waitOn: function() {
     return Meteor.subscribe("images");
   }
 });
 
-
-
-
 Accounts.validateLoginAttempt(function(type){
-
   if(type.user && type.user.emails && !type.user.emails[0].verified )
     throw new Meteor.Error(100002, "email not verified" );
   return true;

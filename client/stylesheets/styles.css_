@@ -18,7 +18,7 @@ body {
   border-color:grey;
   border-style:dotted; 
   padding:5px;
-  
+
 }
 .footer,.footer > a{
   background-color: black;
@@ -26,7 +26,9 @@ body {
   font-size: 0.9em;
   margin: auto;
   link:white;
-
+}
+.footer.cc {
+  width:40%;
 }
 #container {
   width: 100%;
@@ -72,6 +74,13 @@ body {
 }
 .selecteded {
   background: #cd2c0d;
+}
+.filter{
+  background: orange;
+  z-index:-1;
+  float: right;
+  padding: 0 10px 0 7px;
+  font-size:12px;
 }
 .map circle.callout {
   stroke-width: 5px;
@@ -296,9 +305,9 @@ datepicker.dropdown-menu th, .datepicker.dropdown-menu td {
 .header-element{
 display: flex;
 }
+
 .first_number,
 .number{
-  border: 1px solid #666;
   background: #fff;
   border-radius: 4px;
   -moz-border-radius: 4px;
@@ -312,7 +321,9 @@ display: flex;
   display: table-cell;
   color: brown;
   text-align: right;
-
+}
+.date{
+  color:black;
 }
 .first_number {
   margin-left: 10px;

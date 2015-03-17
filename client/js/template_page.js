@@ -7,7 +7,7 @@ Session.set("desaparecidos", 0);
 Session.set("deaths", 0);
 FS.HTTP.setBaseUrl('/files');
 
-Template.home.helpers({
+Template.page_template.helpers({
     showCreateDialog:function () {
       return Session.get("showCreateDialog");
     },
