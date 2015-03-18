@@ -5,14 +5,27 @@ var debugg=false;
 Meteor.publish(null, function (){
   return Meteor.roles.findOne(this.userId);
 });
-Meteor.publish("desaparecidos", function () {
-  return Desaparecidos.find();
+Meteor.publish("cases", function () {
+  return Case.find();
 });
+Case.allow({
+    'insert': function (userId,doc) {
+      /* user and doc checks ,
+      return true to allow insert */
+      return true; 
+    }
+  });
+
 Meteor.publish('images', function() {
   return Images.find();
 });
 //if (Desaparecidos.find().lat==undefined)Desaparecidos.remove();
-
+AdminConfig = {
+  adminEmails: ['aaron@kimmigs.de'],
+  collections: {
+    Case: {}
+  }
+};
 var geo = new GeoCoder({
   geocoderProvider: "openstreetmap",
   httpAdapter: "http"

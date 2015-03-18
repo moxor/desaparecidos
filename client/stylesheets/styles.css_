@@ -80,7 +80,7 @@ body {
   z-index:-1;
   float: right;
   padding: 0 10px 0 7px;
-  font-size:12px;
+  font-size:1px;
 }
 .map circle.callout {
   stroke-width: 5px;

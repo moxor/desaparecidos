@@ -51,7 +51,7 @@ Template.map.rendered = function() {
     });
 
     //load markers from the colleection
-    var query = Desaparecidos.find();
+    var query = Case.find();
     var markers=new L.MarkerClusterGroup();
     query.observe({
 

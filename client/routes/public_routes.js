@@ -12,7 +12,7 @@ Router.route('/desaparecido/:_id', function () {
     this.layout('page_template', {
         data: function () {
             console.log(this.params);
-            return Desaparecidos.findOne({_id: this.params._id});
+            return Case.findOne({_id: this.params._id});
         }
     });
     this.render('desaparecidoPage', {to: 'content'});

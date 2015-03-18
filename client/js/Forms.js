@@ -85,7 +85,7 @@ AutoForm.hooks({
 var sendEmail= function(result){
     Meteor.call('sendEmail',
         'Hello from Desaparecidos!',
-        'Hey there!\nYou have entered a new desaparecido:\n'+JSON.stringify(Desaparecidos.findOne(result))
+        'Hey there!\nYou have entered a new desaparecido:\n'+JSON.stringify(Case.findOne(result))
     );
 };
 AutoForm.hooks({

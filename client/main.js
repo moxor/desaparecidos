@@ -17,10 +17,20 @@ Router.configure({
     return Meteor.subscribe("images");
   }
 });
+AdminConfig = {
+  collections: {
+    Case: {}
+  }
+};
+if (Meteor.isClient) {
+  Meteor.subscribe("cases");
+  window.AdminConfig = AdminConfig;
+}
 
-Accounts.validateLoginAttempt(function(type){
-  if(type.user && type.user.emails && !type.user.emails[0].verified )
-    throw new Meteor.Error(100002, "email not verified" );
-  return true;
-});
+
+// Accounts.validateLoginAttempt(function(type){
+//   if(type.user && type.user.emails && !type.user.emails[0].verified )
+//     throw new Meteor.Error(100002, "email not verified" );
+//   return true;
+// });
 
