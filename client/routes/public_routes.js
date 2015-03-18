@@ -1,9 +1,13 @@
 /**
  * Created by nanu on 07.01.15.
  */
-Router.route('/test',function () {
+Router.route('/about',function () {
     this.layout('page_template');
-    this.render('test',{to: 'content'});
+    this.render('about',{to: 'content'});
+});
+Router.route('/desaparecidos',function () {
+    this.layout('page_template');
+    this.render('cases',{to: 'content'});
 });
 Router.route('/new_template',function () {
     this.layout('new_main');

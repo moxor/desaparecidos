@@ -6,14 +6,21 @@ Meteor.publish(null, function (){
   return Meteor.roles.findOne(this.userId);
 });
 Meteor.publish("cases", function () {
-  return Case.find();
+  if (Roles.userIsInRole(this.userId, ['view-secrets','admin'])) {
+    return Case.find()
+    
+  };
+  return Case.find({$or: [ { 'author':this.userId }, {'approved':true} ]}, {fields: {'author':0,'approved':0,'entrydate':0}});
 });
 Case.allow({
+  
     'insert': function (userId,doc) {
       /* user and doc checks ,
       return true to allow insert */
       return true; 
-    }
+    },
+    'update':function () {
+     return (userId && Meteor.users(userId).admin);}
   });
 
 Meteor.publish('images', function() {

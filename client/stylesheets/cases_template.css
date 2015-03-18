@@ -1,0 +1,34 @@
+.cases_table table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+.cases_table tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.cases_table .table-striped>tbody>tr:nth-child(odd) {
+  background-color: white;
+}
+.cases_table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+  border-top-color: inherit;
+  border-right-color: inherit;
+  border-bottom-color: inherit;
+  border-left-color: inherit;
+}
+.cases_table .table>thead>tr>th, 
+.cases_table .table>tbody>tr>th, 
+.cases_table .table>tfoot>tr>th, 
+.cases_table .table>thead>tr>td, 
+.cases_table .table>tbody>tr>td, 
+.cases_table .table>tfoot>tr>td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}

@@ -15,6 +15,8 @@ And have a look at /server/config_example.js and rename it to config.js
 ## Demo
 
 http://desaparecidos.meteor.com/
+or 
+Desaparecidosmx.org
 ## License
 MIT
 ##Thanks
