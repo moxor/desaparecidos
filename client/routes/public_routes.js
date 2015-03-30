@@ -15,11 +15,19 @@ Router.route('/new_template',function () {
 Router.route('/desaparecido/:_id', function () {
     this.layout('page_template', {
         data: function () {
-            console.log(this.params);
+
             return Case.findOne({_id: this.params._id});
         }
     });
     this.render('desaparecidoPage', {to: 'content'});
+});
+Router.route('/desaparecido/:_id/modify', function () {
+    this.layout('page_template', {
+        data: function () {
+            return Case.findOne({_id: this.params._id});
+        }
+    });
+    this.render('Case_modify', {to: 'content'});
 });
 
 Router.route("/",function() {

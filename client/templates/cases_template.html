@@ -1,9 +1,18 @@
 <template name="cases">
     <div class="cases_table">
-    {{> reactiveTable collection=Case settings=tableSettings}}
+        {{#if isInRole 'admin'}}
+            {{> reactiveTable collection=Case settings=tableSettingsAdmin}}
+            {{else}}
+            {{> reactiveTable collection=Case settings=tableSettings}}
+        {{/if}}
+    
     </div>
 </template>
 <template name="cases_image">
     
     <img height="60px" width="60px" src={{link}} >
+</template>
+<template name="cases_modify">
+    
+    <a href="/desaparecido/{{get_link}}/modify">modify</a>
 </template>

@@ -12,7 +12,20 @@ Template.cases.helpers({
             { key: 'deaths', label: 'Muertos' },
             { key: 'desaparecidos', label: 'Desaparecidos' }
           ]
-      }
+      }},
+      tableSettingsAdmin: function () {
+        return {
+            fields: [
+              { key: 'picture', label: 'Imagen',tmpl: Template.cases_image }, 
+              { key: 'location', label: 'Localidad' },
+              { key: 'name', label: 'Nombre' },
+              { key: 'date', label: 'Fecha', sort: 'descending'},
+              { key: 'deaths', label: 'Muertos' },
+              { key: 'desaparecidos', label: 'Desaparecidos' },
+              { key: 'approved', label: 'Approved' },
+              { key: '_id', label: 'Modify',tmpl: Template.cases_modify }
+            ]
+        }
     }
 });
 Template.cases_image.helpers({
@@ -24,6 +37,7 @@ Template.cases_image.helpers({
         return "/images/nomas.jpg";
     },
 });
+
 Template.cases.events({
   'click .reactive-table tbody tr': function (event) {
     var post = this;

@@ -1,4 +1,4 @@
-var debugg=false;
+
 
 //Publishing Rules
 //User

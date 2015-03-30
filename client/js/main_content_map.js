@@ -36,7 +36,7 @@ Template.map.rendered = function() {
             Session.set("createCoords", {latlng: event.latlng ,userid:Meteor.userId()});
             Meteor.call("get_country", event.latlng, function(error, country) {
                 Session.set("country",country);
-                if (country=="mx")Session.set("showCreateDialog", true);
+                if (country=="MX")Session.set("showCreateDialog", true);
                 else Session.set("showErrorCountry",true);
 
             });

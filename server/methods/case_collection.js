@@ -1,26 +1,26 @@
-//Case
+//Case-Collection
+//publish
+
 Meteor.publish("cases", function () {
-  if (Roles.userIsInRole(this.userId, ['view-secrets','admin'])) {
+  if (Roles.userIsInRole(this.userId, ['admin'])) {
     return Case.find()
     
   };
   return Case.find({$or: [ { 'author':this.userId }, {'approved':true} ]}, {fields: {'author':0,'approved':0,'entrydate':0}});
 });
-
-Meteor.publish("approved", function () {
-  if (Roles.userIsInRole(this.userId, ['view-secrets','admin'])) {
-    return Approved.find()
-    
-  };
-  return Approved.find( { 'author':this.userId }, {});
-});
+//Security section
+Case.permit(['insert', 'update', 'remove']).never().apply();
+Case.permit('insert').ifLoggedIn().apply
+Case.permit(['insert', 'update', 'remove']).ifHasRole('admin').apply();
 Case.allow({
-  
-    'insert': function (userId,doc) {
-      /* user and doc checks ,
-      return true to allow insert */
-      return true; 
-    },
     'update':function () {
+     return (userId && Meteor.users(userId).admin);},
+     'remove':function () {
      return (userId && Meteor.users(userId).admin);}
   });
+  
+Meteor.methods({
+    'insertCaseData': function(){
+        var currentUserId = Meteor.userId();
+    }
+});

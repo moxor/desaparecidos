@@ -1,3 +1,4 @@
+var debugg=false;
 //MAP-METHODS
 var geo = new GeoCoder({
   geocoderProvider: "openstreetmap",
@@ -39,7 +40,10 @@ Meteor.methods({
     console.log("lookupCountry");
     if (!debugg)var result2 = geo2.reverse(latlng.lat,latlng.lng);
     else var result2={country:"mx"};
-    if (result2[0].country!=undefined) return result2[0].country;
+    if (result2[0].country!=undefined){
+      console.log(result2[0].countryCode);
+      return result2[0].countryCode;
+    } 
     return "SEA";
   }
 });

@@ -82,17 +82,18 @@ AutoForm.hooks({
 
     }
 });
+
+//TODO add global variable for server url
 var sendEmail= function(result){
     Meteor.call('sendEmail',
         'Hello from Desaparecidos!',
-        'Hey there!\nYou have entered a new desaparecido:\n'+JSON.stringify(Case.findOne(result))
+        'There is a new desaparecido to approve.\nLink:\n http:\/\/www.desaparecidosmx.org/desaparecido/'+Case.findOne(result)._id+'/modify'
     );
 };
 AutoForm.hooks({
     insertDesaparecidosForm: {
 
         onSubmit: function (insertDoc, updateDoc, currentDoc) {
-            console.log("hey");
             if (customHandler(insertDoc)) {
                 this.done();
             } else {

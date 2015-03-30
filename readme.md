@@ -10,24 +10,24 @@ git clone https://github.com/moxor/desaparecidos.git
 cd desaparecidos
 meteor
 ```
-First user accessing /admin gets admin rights
-And have a look at /server/config_example.js and rename it to config.js
+First user accessing /admin gets admin rights or defined in the config
+And have a look at /server/config/config_example.js and rename it to config.js
 ## Demo
 
 http://desaparecidos.meteor.com/
 or 
-Desaparecidosmx.org
+http://www.desaparecidosmx.org
 ## License
 MIT
 ##Thanks
 to [bevanhunt](https://github.com/bevanhunt/meteor-leaflet/) for the leaflet examples
 ## Todo
-* Check security and Collection subscription
-* publish only the author if its the active user
-* Slider -> minor fixes
-* router for extra pages
-* append informations
-* enable to modify own cases
+* Filters
+* dependencies
+* what information should be added to one case?
+* styling of the desaparecidos-pages
+* check user remove function of his own cases
+* remove button to table
+* rewrite the emailSending notifications to user and admin group
 * suggest new informations about exisiting desaparecido -> to admin and author
-* export database without author
 * Translation
