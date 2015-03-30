@@ -8,7 +8,9 @@ Template.cases.helpers({
             { key: 'picture', label: 'Imagen',tmpl: Template.cases_image }, 
             { key: 'location', label: 'Localidad' },
             { key: 'name', label: 'Nombre' },
-            { key: 'date', label: 'Fecha', sort: 'descending'}
+            { key: 'date', label: 'Fecha', sort: 'descending'},
+            { key: 'deaths', label: 'Muertos' },
+            { key: 'desaparecidos', label: 'Desaparecidos' }
           ]
       }
     }
