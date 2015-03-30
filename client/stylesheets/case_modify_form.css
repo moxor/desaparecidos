@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+.list-group-item.autoform-array-item .autoform-array-item-body {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+}
+.list-group-item.autoform-array-item .autoform-remove-item-wrap {
+    display: table-cell;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-primary {
+    border-color: #77342F;
+    background-color: #FE820A;
+    color: #FFF;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: "Glyphicons Halflings";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 25px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #FFF;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+}
+.form-group {
+    margin-bottom: 10px;
+margin-right: 10px;
+}
+#updateCaseForm{
+    text-align: left;
+    margin: 10px;
+    background-color:rgba(255,255,255,0.7);
+}

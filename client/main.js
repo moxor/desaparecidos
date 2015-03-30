@@ -4,7 +4,7 @@ $(function() {
     if (calculateHeight<=40)calculateHeight=300;
     if (window.innerWidth <=650)$('#map').css('width', "100%");
     //else $('#map').css('width', "75%");
-    console.log(window.innerWidth );
+    //console.log(window.innerWidth );
     $('#map').css('height', calculateHeight +" !important");
   });
   $(window).resize(); // trigger resize event
@@ -22,9 +22,11 @@ AdminConfig = {
     Case: {}
   }
 };
+
 if (Meteor.isClient) {
   Meteor.subscribe("cases");
   window.AdminConfig = AdminConfig;
+  AutoForm.debug();
 }
 
 
