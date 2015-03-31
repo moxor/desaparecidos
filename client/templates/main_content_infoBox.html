@@ -6,12 +6,12 @@
 <template name="caseData">
 
         {{#if selected}}
-            <div id="titel">{{titel}}</div>
+            <div id="titel">{{selectedCase titel}}</div>
             <hr/>
             {{fecha}}
             <br /><hr/>
             <div id="left">
-                Muertos: {{muertos}}<br />
+                Muertos: {{selectedCase muertos}}<br />
                 Desaparecidos:{{desaparecidos}}<br />
             </div>
 
@@ -21,11 +21,11 @@
             <br/>
             <div style="clear:both;">Mas informaciones:<br/></div>
             <hr/>
-            {{informaciones}}
+            {{selectedCase description}}
             <hr/>
             {{#if checkFuente}}
 
-                <a href="{{fuente}}" target="_blank">enlace de prensa</a>
+                <a href="{{selectedCase fuente}}" target="_blank">enlace de prensa</a>
                 <br/>
             {{/if}}
             <a href="{{get_link}}" >mas informaciones</a>

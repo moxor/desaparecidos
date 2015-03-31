@@ -1,3 +1,30 @@
+/*insertForm*/
+.form_left{
+  float: left;
+  width: 250px;
+}
+.form_right{
+  margin-left: 30px;
+  float: left;
+  width: 300px;
+}
+.form_bottom{
+    margin-top: 20px;
+    display: table;
+    width: 100%;
+}
+.form{
+  margin-bottom: 30px;
+}
+#left,#right{
+  float: left;
+  display: inline-block;
+}
+#right{
+margin-left: 20px;
+  float: right;
+ }
+/*modify form admin*/
 * {
     box-sizing: border-box;
 }
@@ -32,6 +59,7 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+    height: 31px;
 }
 .btn-primary {
     border-color: #77342F;
@@ -68,6 +96,22 @@ label {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
 }
+.list-group-item.autoform-array-item .autoform-array-item-body {
+    display: table-cell;
+    vertical-align: top;
+    width: 100%;
+}
+.list-group-item.autoform-array-item .autoform-remove-item-wrap {
+    display: table-cell;
+}
+
+.list-group-item.autoform-array-item > div {
+    display: inline-flex;
+}
+.list-group-item.autoform-array-item .autoform-remove-item {
+    vertical-align: top;
+    margin-right: 15px;
+}
 .panel {
     margin-bottom: 20px;
     background-color: #FFF;
@@ -75,9 +119,27 @@ label {
     border-radius: 4px;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
 }
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+.panel-default > .panel-heading {
+    color: #333;
+    background-color: #F5F5F5;
+    border-color: #DDD;
+}
 .form-group {
     margin-bottom: 10px;
 margin-right: 10px;
+}
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+    color: #A94442;
+}
+.has-error .form-control {
+    border-color: #A94442;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
 }
 #updateCaseForm{
     text-align: left;

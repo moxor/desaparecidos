@@ -25,6 +25,7 @@ AdminConfig = {
 
 if (Meteor.isClient) {
   Meteor.subscribe("cases");
+  Meteor.subscribe("tags");
   window.AdminConfig = AdminConfig;
   AutoForm.debug();
 }

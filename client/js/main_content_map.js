@@ -30,6 +30,8 @@ Template.map.rendered = function() {
     
     //add marker to map
     map.on('dblclick', function(event) {
+        $(".hasDatepicker").removeClass("hasDatepicker"); 
+        $("ui-datepicker-div").remove();
         if(Meteor.user && Meteor.user().emails && !Meteor.user().emails[0].verified )
             Session.set("showError",{Message:"Email not verified, please write Mail to info @ desaparecidosmx.org"});
         else if (Meteor.userId()&&Meteor.user().emails[0].verified ){
@@ -83,14 +85,14 @@ Template.map.rendered = function() {
                     $('.selecteded').toggleClass("selecteded");
                     $(constClass).addClass("selecteded");
 
-                    Session.set("activado_desaparecidos",document._id);
+                    Session.set("selected_case",document._id);
                 });
             markers.addLayer(marker);
             markers.on('click', function (a) {
-            console.log('marker ' + a.layer);
+            //console.log('marker ' + a.layer);
             });
             markers.on('click', function (a) {
-                console.log('marker ' + a.layer);
+             //   console.log('marker ' + a.layer);
             });
 
             map.removeLayer(markers);
@@ -99,7 +101,7 @@ Template.map.rendered = function() {
             if (document.date != undefined) {
                 var value=moment(document.date).format('MM_DD_YYYY');
                 $('.' + document._id).attr('id',"d_"+value);
-                console.log(value);
+               // console.log(value);
             }
 
         },

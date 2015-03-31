@@ -13,22 +13,22 @@ Template.new_desaparecido.helpers({
         var tmp=Session.get("createCoords");
         if (tmp==undefined)return"";
         return tmp.latlng.lat.toString();
-    }
+    },
+      tagsOptions: function () {
+      return Tags.find().map(function (c) {
+      return {label: c.value, value: c._id};
+    });
+  }
 
 });
-Template.new_desaparecido.rendered=function(){
-    $('.datepick').datetimepicker();
-};
 
 Template.createDialog.events({
     'click .save': function (event, template) {
         Session.set("showCreateDialog", false);
-        $('.bootstrap-datetimepicker-widget').remove();
     },
 
     'click .cancel': function () {
         Session.set("showCreateDialog", false);
-        $('.bootstrap-datetimepicker-widget').remove();
     }
 });
 /////////////////////////////////////////////////
@@ -54,6 +54,7 @@ Template.errorMessage.events({
 
     'click .cancel': function () {
         Session.set("showError", false);
+        $("ui-datepicker-div").remove();
     }
 });
 Template.errorMessage.helpers({
@@ -69,8 +70,8 @@ AutoForm.hooks({
     insertDesaparecidosForm: {
         onSuccess: function (operation, result, template) {
             sendEmail(result);
-
-            Session.set("activado_desaparecidos",result);
+            $("ui-datepicker-div").remove();
+            Session.set("selected_case",result);
             console.log(result);
             var constClass="."+result;
             $('.selecteded').toggleClass("selecteded");

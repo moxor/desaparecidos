@@ -30,9 +30,9 @@ Template.cases.helpers({
 });
 Template.cases_image.helpers({
     link: function () {
-        if(Case.findOne(Session.get("activado_desaparecidos"))) {
-            if (Case.findOne(Session.get("activado_desaparecidos")).picture)
-            return Images.findOne(Case.findOne(Session.get("activado_desaparecidos")).picture).url();
+        if(Case.findOne(Session.get("selected_case"))) {
+            if (Case.findOne(Session.get("selected_case")).picture)
+            return Images.findOne(Case.findOne(Session.get("selected_case")).picture).url();
         }
         return "/images/nomas.jpg";
     },

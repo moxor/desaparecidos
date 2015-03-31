@@ -1,0 +1,36 @@
+<template name="new_desaparecido">
+    <b>Latitude: </b> {{lat}}
+    <br />
+    <b>Longitude </b>{{long}}
+    <br />
+    <br />
+    <div class="form">
+      {{#autoForm collection="Case" id="insertDesaparecidosForm" type="insert"}}
+          <fieldset>
+              <div class="form_left">
+                {{> afQuickField name='titel'}}
+                {{> afQuickField name='location'}}
+                  <div class="lat_long">
+              {{> afQuickField name='lat'}}
+                {{> afQuickField name='long'}}
+                  </div>
+              
+                {{> afFormGroup name="date" }}
+                  <!--{{> afQuickField name='author'}}-->
+                {{> afQuickField name='deaths'}}
+                {{> afQuickField name='desaparecidos'}}
+              </div>
+              <div class="form_right">
+                {{> afQuickField name='description' rows=10}}
+                {{> afFieldInput name="tags" type="select-checkbox-inline" options=tagsOptions}}
+                
+              </div>
+              <div class="form_bottom">
+                {{> afQuickField name='news_source'}}
+                {{> afQuickField name="picture"}}
+              </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Insert</button>
+      {{/autoForm}}
+    </div>
+</template>
