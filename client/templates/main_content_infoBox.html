@@ -6,26 +6,46 @@
 <template name="caseData">
 
         {{#if selected}}
-            <div id="titel">{{selectedCase titel}}</div>
-            <hr/>
-            {{fecha}}
-            <br /><hr/>
-            <div id="left">
-                Muertos: {{selectedCase muertos}}<br />
-                Desaparecidos:{{desaparecidos}}<br />
-            </div>
+        <table class="infoBox">
+            	<caption>
+            	    <h1>{{selectedCase 'titel'}}</h1>
+                    {{selectedCase 'dateCase'}}
+                    {{selectedCase 'location'}}
+            	</caption>
 
-            <div id="right">
-                <img src="{{picture}}" height="80px" width="80px">
-            </div>
-            <br/>
-            <div style="clear:both;">Mas informaciones:<br/></div>
-            <hr/>
-            {{selectedCase description}}
-            <hr/>
+            	<tfoot>
+            		<tr>
+            		</tr>
+            	</tfoot>
+            	<tbody>
+            	    <tr>
+            	        {{selectedCase 'person.[0].name'}}
+            	    </tr>
+            		<tr>
+            			<td>  
+                			<tr>
+                			    <td>Muertos:</td>
+                			    <td>{{selectedCase 'muertos'}}</td>
+                		    </tr>
+                            <tr>
+                			    <td>Desaparecidos:</td>
+                			    <td>{{selectedCase 'desaparecidos'}}</td>
+                		    </tr>
+            		    </td>
+            			<td><img src="{{picture}}" height="80px" width="80px"></td>
+            		</tr>
+            		<tr>
+            			<td><h2>Descripción:</h2></td>
+            		</tr>
+            		<tr>
+            			<td>{{selectedCase 'description'}}</td>
+            		</tr>
+            	</tbody>
+            </table>
+
             {{#if checkFuente}}
 
-                <a href="{{selectedCase fuente}}" target="_blank">enlace de prensa</a>
+                <a href="{{selectedCase 'fuente'}}" target="_blank">enlace de prensa</a>
                 <br/>
             {{/if}}
             <a href="{{get_link}}" >mas informaciones</a>

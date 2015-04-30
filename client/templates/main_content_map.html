@@ -1,12 +1,27 @@
+<template name="map_container">
+    {{#if ready}}
+       {{>map}}
+       {{else}}
+       <h1><div id="spinner"></div>descargando base de datos</h1>
+
+    {{/if}}
+        <div id="map" class="map"></div>
+</template>
 <template name="map">
-    <div id="map" class="map"></div>
+        <div id="loading">
+
+    </div>
+
+        <div id="progress"><div id="progress-bar"></div></div>
+
     <div class="notice">
         {{#if logedin}}
           {{>notice}}
         {{else}}
         {{>notice_login}}
-      {{/if}}
+    {{/if}}
     </div>
+
 </template>
 
 <template name="notice">

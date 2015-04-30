@@ -9,10 +9,10 @@ Template.numbers.helpers({
         return Session.get("deaths");
     },
     primeroDato:function () {
-        return moment(Session.get("primeroDato")).format('MM/DD/YYYY');
+        return moment(Session.get("firstDate")).format('MM/DD/YYYY');
     },
     ultimoDato:function () {
-        return moment(Session.get("ultimoDato")).format('MM/DD/YYYY');
+        return moment(Session.get("lastDate")).format('MM/DD/YYYY');
     }
 
 });

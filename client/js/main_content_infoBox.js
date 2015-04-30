@@ -11,7 +11,7 @@ Template.caseData.helpers({
     fecha:function(){
         if (Session.get("selected_case")){
             //console.log(Case.findOne(Session.get("selected_case")).date)
-        return moment(Case.findOne(Session.get("selected_case")).date).format('MM/DD/YYYY');
+        return moment(Case.findOne(Session.get("selected_case")).dateCase).format('MM/DD/YYYY');
 
         }
 
@@ -20,12 +20,15 @@ Template.caseData.helpers({
     muertos:function(){
         if (Session.get("selected_case")){
         if ( Case.findOne(Session.get("selected_case")).deaths!=undefined)
-            return Case.findOne(Session.get("selected_case")).deaths;}
-        return "";
+        
+            return Case.findOne(Session.get("selected_case")).deaths;
+            
+        }
+        return "0";
     },
     desaparecidos:function(){
         if(Case.findOne(Session.get("selected_case"))) {
-          return Case.findOne(Session.get("selected_case")).desaparecidos;
+          return Case.findOne(Session.get("selected_case")).desaparecidos+1;
         }
         return "";
     },
@@ -49,7 +52,8 @@ Template.caseData.helpers({
     picture:function(){
         if(Case.findOne(Session.get("selected_case"))) {
             if (Case.findOne(Session.get("selected_case")).picture)
-            return Images.findOne(Case.findOne(Session.get("selected_case")).picture).url();
+            return Case.findOne(Session.get("selected_case")).picture
+            //Images.findOne(Case.findOne(Session.get("selected_case")).picture).url();
         }
         return "/images/nomas.jpg";
     },

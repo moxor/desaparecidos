@@ -31,3 +31,4 @@ to [bevanhunt](https://github.com/bevanhunt/meteor-leaflet/) for the leaflet exa
 * rewrite the emailSending notifications to user and admin group
 * suggest new informations about exisiting desaparecido -> to admin and author
 * Translation
+* page-Ayuda

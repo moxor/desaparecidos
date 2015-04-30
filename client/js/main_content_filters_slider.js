@@ -10,12 +10,12 @@
 Template.slider.rendered = function () {
     //wait 1 second for the map to be renderd
     setTimeout(function (){
-    var prim = moment(Session.get("primeroDato")).add('d',-1);;
-    var last = moment(Session.get("ultimoDato")).add('d',1);;
+    var prim = moment(Session.get("firstDate")).add('d',-1);;
+    var last = moment(Session.get("lastDate")).add('d',1);;
 
     if (prim && last) {
-        Session.set("selected_start_date", Session.get("primeroDato"));
-        Session.set("selected_end_date", Session.get("ultimoDato"));
+        Session.set("selected_start_date", Session.get("firstDate"));
+        Session.set("selected_end_date", Session.get("lastDate"));
 
             //init slider
             $("#slider").dateRangeSlider({
@@ -80,7 +80,7 @@ var delInvisible=function(str){
 Template.slider.helpers({
     datechanged:function(){
 
-        if (Session.get("primeroDato")&&Session.get("ultimoDato"))return true;
+        if (Session.get("firstDate")&&Session.get("lastDate"))return true;
         else return false;
     }
 

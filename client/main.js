@@ -23,8 +23,12 @@ AdminConfig = {
   }
 };
 
+Meteor.startup(function() {
+     Session.set('data_loaded', false); 
+}); 
 if (Meteor.isClient) {
-  Meteor.subscribe("cases");
+  Meteor.subscribe("cases",function(){
+     Session.set('data_loaded', true);} );
   Meteor.subscribe("tags");
   window.AdminConfig = AdminConfig;
   AutoForm.debug();

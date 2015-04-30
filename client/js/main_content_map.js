@@ -11,6 +11,10 @@ var createIcon = function(numbers,id) {
 
     });
 }
+Template.map.onCreated(function () {
+  // Use this.subscribe inside onCreated callback
+  this.subscribe("cases");
+});
 Template.map.rendered = function() {
     //resize for the map
     $(window).resize(function () {
@@ -19,15 +23,64 @@ Template.map.rendered = function() {
     }).resize();
     //icons-path
     L.Icon.Default.imagePath = '/images'
+    var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+				maxZoom: 18,
+				attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+	}),
+	latlng = L.latLng(23.3927, -100.6192);
     
     //disable zoom on doubleclick for adding a marker
-    var map = L.map('map', {
-        doubleClickZoom: false
-    }).setView([23.3927, -100.6192], 5);
+    var map = L.map('map', { center: latlng, zoom: 5, layers: [tiles],doubleClickZoom: false });
 
     //define map provider
-    L.tileLayer.provider('Thunderforest.Outdoors').addTo(map);
+    //L.tileLayer.provider('Thunderforest.Outdoors').addTo(map);
+    var progress = document.getElementById('progress');
+		var progressBar = document.getElementById('progress-bar');
+		function updateProgressBar(processed, total, elapsed, layersArray) {
+			if (elapsed > 1000) {
+				// if it takes more than a second to load, display the progress bar:
+				progress.style.display = 'block';
+				progressBar.style.width = Math.round(processed/total*100) + '%';
+			}
+			if (processed === total) {
+				// all markers processed - hide the progress bar:
+				progress.style.display = 'none';
+			}
+		}
+		var markers = L.markerClusterGroup({ chunkedLoading: true, chunkProgress: updateProgressBar });
+		var markerList = [];
+		var data=Case.find().fetch();
+		console.log(data.length);
+		for (var i = 0; i < data.length; i++) {
+		    //numbers
+            var numbers=(document.desaparecidos ? data[i].desaparecidos :0);// + (data[i].deaths? data[i].deaths :0) ;
+            if (numbers==0)numbers=1;
+            Session.set("desaparecidos",Session.get("desaparecidos")+numbers);
+            if (data[i].dateCase != undefined){
+                if (moment(Session.get("lastDate")).diff(moment(data[i].dateCase),'days')<0||Session.get("lastDate")==undefined) Session.set("lastDate", data[i].dateCase);
+                if (moment(Session.get("firstDate")).diff(moment(data[i].dateCase),'days')>0||Session.get("firstDate")==undefined) Session.set("firstDate", data[i].dateCase);
+            }
+            var latlng={lat:data[i].lat,lng:data[i].long};
+            if (data[i].lat==undefined)latlng={lat:0,lng:0};
+            var marker = new L.Marker(latlng,{
+                  _id:data[i]._id,
+                 icon: createIcon(numbers?numbers:"1",data[i]._id)
+            });
+            marker.on('click', function(event) {
+                var constClass="."+event.target.options._id;
+                console.log(event.target.options._id);
+                $('.selecteded').toggleClass("selecteded");
+                $(constClass).addClass("selecteded");
+                Session.set("selected_case",event.target.options._id);
+            });
+    		markerList.push(marker);
+		}
+    console.log('start clustering: ' + window.performance.now());
     
+	markers.addLayers(markerList);
+	map.addLayer(markers);
+	console.log('end clustering: ' + window.performance.now());
+	
     //add marker to map
     map.on('dblclick', function(event) {
         $(".hasDatepicker").removeClass("hasDatepicker"); 
@@ -54,66 +107,37 @@ Template.map.rendered = function() {
 
     //load markers from the colleection
     var query = Case.find();
-    var markers=new L.MarkerClusterGroup();
-    query.observe({
+     query.observeChanges({
 
-        added: function(document) {
-            //get numbers right
-            if (document.desaparecidos != undefined){
-                Session.set("desaparecidos",Session.get("desaparecidos")+parseInt(document.desaparecidos));
-            }
-            if (document.deaths != undefined){
-                Session.set("deaths",Session.get("deaths")+parseInt(document.deaths));
-            }
-            if (document.date != undefined){
-                console.log
-                if (moment(Session.get("ultimoDato")).diff(document.date,'days')<0||Session.get("ultimoDato")==undefined) Session.set("ultimoDato", document.date);
-                if (moment(Session.get("primeroDato")).diff(document.date,'days')>0||Session.get("primeroDato")==undefined) Session.set("primeroDato", document.date);
-            }
-            var numbers=(document.desaparecidos ? document.desaparecidos :0) + (document.deaths? document.deaths :0) ;
-            var latlng={lat:document.lat,lng:document.long};
-            if (document.lat==undefined)latlng={lat:0,lng:0};
-
-            //Set marker to map
-            var marker = new L.Marker(latlng,{
-                _id:document._id +" test",
-                icon: createIcon(numbers?numbers:"0",document._id)
-            });
-            marker.on('click', function(event) {
-                    var constClass="."+document._id;
-                    //console.log(event.target.options._id);
-                    $('.selecteded').toggleClass("selecteded");
-                    $(constClass).addClass("selecteded");
-
-                    Session.set("selected_case",document._id);
-                });
-            markers.addLayer(marker);
-            markers.on('click', function (a) {
-            //console.log('marker ' + a.layer);
-            });
-            markers.on('click', function (a) {
-             //   console.log('marker ' + a.layer);
-            });
-
-            map.removeLayer(markers);
-            map.addLayer(markers);
-            $('.'+document._id).addClass("visible");
-            if (document.date != undefined) {
-                var value=moment(document.date).format('MM_DD_YYYY');
-                $('.' + document._id).attr('id',"d_"+value);
-               // console.log(value);
-            }
-
-        },
-
+    //      added: function(document) {
+    //          var numbers=(document.desaparecidos ? data[i].desaparecidos :0);// + (data[i].deaths? data[i].deaths :0) ;
+    //         if (numbers==0)numbers=1;
+    //         var latlng={lat:data[i].lat,lng:data[i].long};
+    //         if (data[i].lat==undefined)latlng={lat:0,lng:0};
+    //         var marker = new L.Marker(latlng,{
+    //               _id:data[i]._id,
+    //              icon: createIcon(numbers?numbers:"1",data[i]._id)
+    //         });
+    //         marker.on('click', function(event) {
+    //             var constClass="."+event.target.options._id;
+    //             console.log(event.target.options._id);
+    //             $('.selecteded').toggleClass("selecteded");
+    //             $(constClass).addClass("selecteded");
+    //             Session.set("selected_case",event.target.options._id);
+    //         });
+    // 		markerList.push(marker)
+    // 		map.removeLayer(markers);
+    // 		markers.addLayers(markerList);
+    //     	map.addLayer(markers);
+    //     },
         removed: function(oldDocument) {
             //get the numbers right
             if (oldDocument.desaparecidos){
                 Session.set("desaparecidos",Session.get("desaparecidos")-parseInt(oldDocument.desaparecidos));
             }
-            if (oldDocument.deaths){
-                Session.set("deaths",Session.get("deaths")-parseInt(oldDocument.deaths));
-            }
+            // if (oldDocument.deaths){
+            //     Session.set("deaths",Session.get("deaths")-parseInt(oldDocument.deaths));
+            // }
             //delete the markers
             layers = map._layers;
             var key, val;
@@ -137,5 +161,13 @@ Template.map.helpers({
     logedin: function() {
         if (Meteor.userId())return true;
         return false;
+    },
+    ready:function(){
+        return false;
+    }
+});
+Template.map_container.helpers({
+    ready:function(){
+        return Session.get("data_loaded");
     }
 });

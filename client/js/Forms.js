@@ -21,6 +21,9 @@ Template.new_desaparecido.helpers({
   }
 
 });
+Template.new_desaparecido.rendered=function(){
+    $('.datepick').datetimepicker();
+};
 
 Template.createDialog.events({
     'click .save': function (event, template) {
