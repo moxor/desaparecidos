@@ -31,7 +31,6 @@ Template.slider.rendered = function () {
                 var test = moment(visible[i].id.replace('d_', '').replace('_', ' ').replace('_', ' '));
 
                 if (test.diff(data.values.min, 'days') < 0) {
-                    console.log("hey");
                     var str = visible[i].id.replace('d', '#d');
 
                     //addInvisible(str);
@@ -40,7 +39,6 @@ Template.slider.rendered = function () {
 
                 }
                 else if (test.diff(data.values.max, 'days') > 0) {
-                    console.log("hey");
                     var str = visible[i].id.replace('d', '#d');
 
                     addInvisible(str);
